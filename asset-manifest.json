@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/regional-climate-dashboard/static/css/main.50c4e22e.css",
+    "main.js": "/regional-climate-dashboard/static/js/main.098ccccf.js",
+    "static/js/787.01bcb557.chunk.js": "/regional-climate-dashboard/static/js/787.01bcb557.chunk.js",
+    "index.html": "/regional-climate-dashboard/index.html",
+    "main.50c4e22e.css.map": "/regional-climate-dashboard/static/css/main.50c4e22e.css.map",
+    "main.098ccccf.js.map": "/regional-climate-dashboard/static/js/main.098ccccf.js.map",
+    "787.01bcb557.chunk.js.map": "/regional-climate-dashboard/static/js/787.01bcb557.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50c4e22e.css",
+    "static/js/main.098ccccf.js"
+  ]
+}
