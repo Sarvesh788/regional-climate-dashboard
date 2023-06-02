@@ -1,0 +1,40 @@
+.sidebar {
+    width: 200px;
+    height: calc(100vh - 100px);
+    float: left;
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #4eaccf; 
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3a8fa5; /* Darker shade on hover */
+  }
+  
+  .sidebar.dark-mode {
+    background-color: #222;
+    color: #29b5e1;
+  }
+  
+  .sidebar-dark {
+    background-color: #000000;
+    color: #29b5e1;
+  }
+  /*.dark-mode can be removed */

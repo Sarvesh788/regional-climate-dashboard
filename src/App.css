@@ -2,10 +2,47 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin: 20px 0;
 }
+
+.sidebar {
+  width: 200px;
+  height: calc(100vh - 100px);
+  float: left;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.map-container {
+  height: calc(100vh - 100px);
+  width: calc(100% - 200px);
+  margin: 0 auto;
+}
+
+.App.dark-mode {
+  background-color: #222;
+  color: #29b5e1;
+}
+
+.dark-mode {
+  background-color: #000000;
+  color: #29b5e1;
+}
+
+.custom-tile-layer {
+  background-color: #fff; /* Set the background color of land areas outside India to white */
+}
+
+.leaflet-container {
+  background-color: #29b5e1; /* Set the background color of water areas to blue */
+}
+
+.leaflet-top.leaflet-right .leaflet-control-zoom {
+  display: none; /* Hide the default zoom control */
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -25,8 +62,8 @@
 }
 
 .App-link {
-  color: #61dafb;
-}
+  color: #29b5e1;
+} 
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +72,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} 
