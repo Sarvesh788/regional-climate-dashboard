@@ -1,12 +1,46 @@
-.sidebar {
+/* .sidebar {
     width: 200px;
     height: calc(100vh - 100px);
-    float: left;
-    background-color: #f0f0f0;
+    position: absolute;
     padding: 10px;
     box-sizing: border-box;
-  }
+    transition: transform 0.3s ease;
+    transform: translateX(-200px);
+  } */
   
+  .sidebar {
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #f8f9fa;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.button-options{
+    opacity : 0;
+    transform: opacity 0.3s ease;
+}
+
+.button-options.open {
+    opacity: 1;
+}
+
+.App {
+    padding-left: 20px;
+}
+
   h2 {
     margin-bottom: 10px;
   }
@@ -24,6 +58,12 @@
     cursor: pointer;
   }
   
+  .toggle-button:before {
+    /* Styles for menu icon */
+    content: "";
+    /* Add your menu icon styles here */
+  }
+
   button:hover {
     background-color: #3a8fa5; /* Darker shade on hover */
   }
@@ -33,8 +73,48 @@
     color: #29b5e1;
   }
   
+  .sidebar .data-buttons {
+    margin-top: 20px;
+  }
+
   .sidebar-dark {
-    background-color: #000000;
+    background-image: linear-gradient(to bottom, #333, #111);
     color: #29b5e1;
   }
-  /*.dark-mode can be removed */
+
+  .toggle-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    color: #29b5e1;
+  }
+  
+  .toggle-button:hover {
+    background-color: #f0f0f0;
+    color: #004458;
+  }
+  
+  .toggle-button:focus {
+    outline: none;
+  }
+  
+  /* .button-options {
+    
+  }
+  
+  .button-options button {
+    
+  }  Till now decided to use the ones applied general to sidebar */
+
+  .button-options h2 {
+    margin-bottom: 10px;
+  }

@@ -1,0 +1,35 @@
+/* 
+DarkModeToggle.js = DarkModeSwitch.js
+toggleDarkMode = onToggle
+dark-mode-toggle = dark-mode-switch
+*/
+
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a8fa5;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.dark-mode-toggle.hover {
+    background-color: #4eaccf;
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle.dark-mode {   
+    background-color: #444;
+}
+
+.dark-mode-toggle.dark-mode:hover {
+    background-color: #333;
+}
