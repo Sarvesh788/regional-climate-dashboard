@@ -1,0 +1,56 @@
+/* LineGraph.css */
+
+svg {
+    font: 10px sans-serif;
+  }
+  
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+  }
+  
+  .dot {
+    fill: #ffab00;
+    stroke: #fff;
+    stroke-width: 1.5px;
+  }
+  
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+   shape-rendering: crispEdges;
+  }
+  
+  .x.axis path {
+    display: none;
+  }
+  
+  .tooltip {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+  
+  .tooltip h1 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+  }
+  
+  .tooltip p {
+    margin: 0;
+  }
+  
+
+  

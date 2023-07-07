@@ -1,0 +1,50 @@
+.year-slider {
+    width: 300px;
+    margin: auto;
+  }
+  
+  .year-slider input {
+    width: 100%;
+    height: 15px;
+    background: #3a8fa5;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  
+  .year-slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .year-slider input::-webkit-slider-thumb:hover {
+    background: #2c6d86;
+  }
+  
+  .year-slider input::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .year-slider input::-moz-range-thumb:hover {
+    background: #2c6d86;
+  }
+  
+  .year-slider div {
+    text-align: center;
+    margin-top: 10px;
+    color: #3a8fa5;
+    font-size: 16px;
+  }
+  
