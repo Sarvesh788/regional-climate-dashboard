@@ -1,0 +1,31 @@
+.get-data-button button:hover {
+    background-color: #2c6d86;
+    transform: scale(1.05);
+  }
+  
+  .get-data-button.dark-mode button {
+    background-color: #444;
+  }
+  
+  .get-data-button.dark-mode button:hover {
+    background-color: #333;
+  }
+  
+  .get-data-button button {
+    background-color: #3a8fa5;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+
+  .get-data-button {
+    z-index: 1005;
+    position: absolute;
+    top: 200px;
+    right: 100px;
+  }

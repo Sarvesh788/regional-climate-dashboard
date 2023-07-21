@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './MonthSelector.css';
 
 const MonthSelector = ({ onChange }) => {
   const [month, setMonth] = useState('');
@@ -9,7 +10,7 @@ const MonthSelector = ({ onChange }) => {
   };
 
   return (
-    <div>
+    <div className='monthSelector'>
       <select value={month} onChange={handleChange}>
         <option value="">Select a month</option>
         <option value="jan">January</option>

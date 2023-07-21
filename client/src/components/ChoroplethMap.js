@@ -9,8 +9,13 @@
       const [loading, setLoading] = useState(true);
 
       const geoJSONStyle = (feature) => {
-        console.log('feature.properties.deviation in geoJSONStyle: ', typeof feature.properties.deviation);
-        const color = colorScale ? colorScale(feature.properties.deviation) : '#808080'; 
+        const newColorScale = d3
+        .scaleLinear()
+        .domain([-2, -1.5, -0.5, 0.5, 1,5 , 2]) // Define temperature ranges
+        .range(["#FF0000", "#2A00D5", "#5500AA", "#7F007F", "#AA0055", "#D5002A"]); // Assign colors for each range
+
+        // console.log('newColorScale(feature.properties.deviation): ', newColorScale(feature.properties.deviation));
+        const color = newColorScale(feature.properties.deviation);
         return {
           fillColor: color,
           weight: 2,
@@ -91,7 +96,7 @@
 
   const addTooltip = (feature, layer) => {
     if (feature.properties && feature.properties.Dist_Name) {
-      layer.bindTooltip(feature.properties.Dist_Name);
+      layer.bindTooltip(feature.properties.Dist_Name + ': ' + feature.properties.deviation);
     }
   };
 

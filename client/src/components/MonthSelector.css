@@ -1,0 +1,37 @@
+
+.monthSelector {
+    position: absolute;
+    top: 740px;
+    left: 575px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 1rem 0;
+  }
+  
+  .monthSelector select {
+    padding: 0.5rem;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .monthSelector select option {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .monthSelector select option:first-child {
+    font-style: italic;
+  }
+  
+  .monthSelector select option:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .monthSelector select option:hover {
+    background-color: #e6e6e6;
+  }
+  

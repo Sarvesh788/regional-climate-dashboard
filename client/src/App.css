@@ -47,13 +47,13 @@ h1 {
 
 .map-container {
   /* .Working.  padding left added to avoid functionality*/
-  padding-right: 500px;
-  padding-bottom: 200px;
+  padding-right: 600px;
+  padding-bottom: 500px;
   /* padding-left: 200px; */
   transform: translateX(var(--sidebar-width));
   transition: all 0.3s ease-in-out;
-  height: calc(100vh - var(--header-height));
-  width: calc(100% - 700px);
+  height: 1000px;
+  width: calc(100% - 900px);
   overflow: auto;
   filter: var(--dark-mode) brightness(0.8);
   /* transform: translateX(-200px); */
@@ -63,22 +63,6 @@ h1 {
   /* ..no need of this .. */ 
   transform: translateX(0);
 }
-
-.map-container.sidebar-open {
-  grid-template-columns: 300px 1fr;
-  padding-left: 1000px;
-  transition: grid-template-columns 0.3s ease-in-out;
-  transform: translateX(0);
-}
-
-
-/* 220 earlier, experimenting */
-/* .map-container.map-shifted {
-  grid-template-columns: 300px 1fr;
-  transition: grid-template-columns 0.3s ease-in-out;
-  padding-left: 220px;
-  transform: translateX(0);
-} */
 
 .toggle-button {
   position: absolute;
@@ -107,9 +91,9 @@ h1 {
   transition: transform 0.3s ease-in-out;
 }
 
-.map-container.map-shifted {
+/* .map-container.map-shifted {
   transform: translateX(200px);
-}
+} */
 
 
 .menu-button {
@@ -143,16 +127,6 @@ h1 {
   color: #29b5e1;
 }
 
-/* Set the background color of land areas outside India to white */
-.custom-tile-layer {
-  /* background-color: #fff;  */
-}
-
-/* Set the background color of water areas to blue */
-.leaflet-container {
-  /* background-color: #29b5e1; */
-}
-
 text {
   fill: #333;
   font-size: medium;
@@ -165,3 +139,56 @@ text {
   shape-rendering: crispEdges;
 }
 
+h4 {
+  position: absolute;
+  top: 100px;
+  right: 500px;
+}
+
+h2 {
+  position: absolute;
+  top: 180px;
+  right: 350px;
+}
+
+.selected {
+  color: red;
+}
+
+.leaflet-index {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.leaflet-index-item {
+  display: flex;
+  z-index: 1004;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.color-block {
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+}
+
+.range {
+  color: #000000;
+}
+
+.leaflet-index-box {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

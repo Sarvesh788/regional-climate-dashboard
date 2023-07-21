@@ -42,12 +42,6 @@ const App = () => {
     console.log('Selected option:', option);
     const cityName = citiesData ? citiesData.name : '';
   };
-  // const geoJSONStyle = (feature) => {
-  //   return {
-  //     color: 'orange',
-  //     weight: 0.5, 
-  //   };
-  // };
 
   const handleYearChange = (year) => {
     console.log('Selected year:', year);
@@ -55,8 +49,8 @@ const App = () => {
   };
 
   const handleMonthChange = (Month) => {
-      console.log('Selected month:', Month);
-      setSelectedMonth(Month);
+    console.log('Selected month:', Month);
+    setSelectedMonth(Month);
   };
 
   const handleRegionSelect = (region) => {
@@ -76,7 +70,7 @@ const App = () => {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-  }; 
+  };
 
   useEffect(() => {
     Axios.get('http://localhost:3001/api/get')
@@ -87,10 +81,11 @@ const App = () => {
           .then((geoData) => {
             const lineGraphData = apiData.filter((item) => {
               return (item.region_name === selectedRegion && item.Month === selectedMonth);
-            }).map((item)=>{
+            }).map((item) => {
               return {
                 Year: item.Year,
-                Max_temperature: item.Max_temperature,
+                deviation: item.Deviation,
+                Normal: item.Normal
               };
             });
             setGeojsonData(geoData);
@@ -102,7 +97,7 @@ const App = () => {
       .catch((error) => {
         console.error('Error fetching data', error);
       });
-  }, [selectedRegion, selectedMonth]); 
+  }, [selectedRegion, selectedMonth]);
 
   const getLineGraphData = () => {
     setLineGraphData(lineGraphData);
@@ -125,7 +120,7 @@ const App = () => {
     return () => {
       window.removeEventListener('wheel', handleWheel);
     };
-  }, [map, mapZoom, mapCenter]); 
+  }, [map, mapZoom, mapCenter]);
 
   const handleMapZoom = (event) => {
     if (event.target._zoom < 5) {
@@ -151,7 +146,7 @@ const App = () => {
             center={mapCenter}
             zoom={mapZoom}
             style={{
-              height: 'calc(100vh - 100px)',
+              height: '600px',
               width: 'calc(100% - 100px)',
               margin: '0 auto'
             }}
@@ -178,25 +173,43 @@ const App = () => {
                 <Popup>{city.name}</Popup>
               </Marker>
             ))}
-            <ChoroplethMap setGeojsonData={setGeojsonData} onRegionSelect={handleRegionSelect} selectedYear={selectedYear} selectedMonth={selectedMonth}/>
-            {/* {geojsonData && ( */}
-        {/* // <GeoJSON key="india-border" data={geojsonData} style={geoJSONStyle} /> */}
-      {/* )} */}
+            <ChoroplethMap setGeojsonData={setGeojsonData} onRegionSelect={handleRegionSelect} selectedYear={selectedYear} selectedMonth={selectedMonth} />
+            <div className="leaflet-index">
+            <div className="leaflet-index-item">
+              <div className="color-block" style={{ backgroundColor: 'red' }}></div>
+              <div className="range">more than 1</div>
+            </div>
+            <div className="leaflet-index-item">
+              <div className="color-block" style={{ backgroundColor: 'purple' }}></div>
+              <div className="range">In. -1 and 1</div>
+            </div>
+            <div className="leaflet-index-item">
+              <div className="color-block" style={{ backgroundColor: 'blue' }}></div>
+              <div className="range">less than -1</div>
+            </div>
+            {/* Add more index items as needed */}
+          </div>
+
+
           </MapContainer>
           <div>
-          <h1>Temperature Data</h1>
-          <GetDataButton onClick={getLineGraphData} />
-          <LineGraph data = {lineGraphData} />
+            <h2> Temperature anomaly data</h2>
+            <h4>
+              Selected Region: <span className="selected">{selectedRegion}</span> <br />
+              Selected Month: <span className="selected">{selectedMonth}</span>
+            </h4>          
+            <GetDataButton onClick={getLineGraphData} />
+            <LineGraph data={lineGraphData} />
           </div>
           <div className="selectors">
-        <YearSlider minYear={1900} maxYear={2022} onChange={handleYearChange} />
-        <MonthSelector onChange={handleMonthChange} />
-      </div>
+            <YearSlider minYear={1900} maxYear={2022} onChange={handleYearChange} />
+            <MonthSelector onChange={handleMonthChange} />
+          </div>
           <div id="city-info" className="city-info">
             <CityInfo city={selectedCity} />
             {
               data.map((val, index) => {
-                return (<h1 key={index}>Year: {val.Year}</h1>);
+                return (<h1 key={index}>Year: {val.Year}</h1>); // val.YEAR
               })}
           </div>
         </div>

@@ -6,15 +6,15 @@ svg {
   
   .line {
     fill: none;
-    stroke: steelblue;
+    stroke: #f00;
     stroke-width: 2px;
   }
   
-  .dot {
+  /* .dot {
     fill: #ffab00;
     stroke: #fff;
     stroke-width: 1.5px;
-  }
+  } */
   
   .axis path,
   .axis line {
@@ -53,4 +53,27 @@ svg {
   }
   
 
+.circle {
+  r: 2;
+  transition: r 0.2s ease-in-out;
+}
   
+.circle:hover {
+  r: 5;
+}
+
+.line-graph-container {
+  position: absolute;
+  top: 150px;
+  right: 20px; 
+  margin-top: 50px;
+}
+
+.h2 {
+  position: relative;
+  top: 100px;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-right: 500px; 
+}   

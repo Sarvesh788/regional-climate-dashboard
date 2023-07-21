@@ -18,7 +18,7 @@ const YearSlider = ({ minYear, maxYear, onChange }) => {
         value={year}
         onChange={handleChange}
       />
-      <div>Selected Year: {year}</div>
+      <div className = "selected-year">Selected Year: {year}</div>
     </div>
   );
 };

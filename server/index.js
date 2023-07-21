@@ -32,6 +32,10 @@ app.post('/api/insert', (req, res) => {
     const Max_temperature = req.body.Max_temperature;
     const Normal = req.body.Normal;
     const Deviation = req.body.Deviation;
+    const Min_Temp = req.body.Min_Temp;
+    const Min_Normal = req.body.Min_Normal;
+    const Mean = req.body.Mean;
+    const Anamoly = req.body.Anamoly;
 });
 
 

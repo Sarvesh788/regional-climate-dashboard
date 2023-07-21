@@ -1,9 +1,10 @@
 import React from 'react';
-import './DataButtons.css';
+// import './DataButtons.css';
+import './GetDataButton.css';
 
 const GetDataButton  = ({ onClick }) => (
-    <div className = 'data-buttons'>
-    <button onClick={onClick}>Get Data</button> 
+        <div className = 'get-data-button'>
+            <button onClick={onClick}>Get Data</button> 
     </div>
 );
 
