@@ -1,8 +1,6 @@
 # regional-climate-dashboard
 # Regional Temperature Dashboard
 
-![Dashboard Preview](link_to_dashboard_screenshot.png)
-
 ## Table of Contents
 - [Overview](#overview)
 - [Demo](#demo)
@@ -33,6 +31,8 @@ The Regional Temperature Dashboard is a web application that provides users with
 - Efficient Data Retrieval for fast and real-time data fetching and processing.
 - Regional Selection from Map for easy selection of specific regions.
 - Advanced Analysis Tools for in-depth data analysis and comparisons.
+
+![Dashboard Preview](link_to_dashboard_screenshot.png)
 
 ## Technologies Used
 - React
